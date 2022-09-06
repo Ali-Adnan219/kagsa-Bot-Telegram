@@ -1,0 +1,40 @@
+var bot = HTTP()
+
+var file = File.Write('data.txt')
+file.write('')
+file.end()
+
+
+func polling (token ) {
+bot.URL("https://api.telegram.org/bot%{token}/getUpdates?timeout=1") 
+bot.method("get")
+var response = JSON.toDict(bot.send().text)
+if get(response, "ok") == true {
+    var result = get(response, "result")
+    if length(result) > 0 {
+            var file2 = File.Read('data.txt')
+			if file2.getText() != toStr(get(get(result, length(result)-1 ), "update_id" ))  {
+                var update_id = toStr(get(get(result, length(result)-1 ), "update_id" ))
+                var file = File.Write('data.txt')
+                file.write(update_id)
+                file.end() 
+                file2.end() 
+                var res = get(result, length(result)-1 )
+                return res
+            }
+	}
+	} 
+}
+
+
+
+
+
+
+
+func sendData (token,method,data){
+    bot.URL("https://api.telegram.org/bot%{token}/%{method}") 
+	bot.method("post")
+    var response = JSON.toDict(bot.send(data).text)
+    return response;}
+
