@@ -1,5 +1,5 @@
 include "bots.kgl"
-var token='5689364691:AAE-m5YBGMQ7QltUKxdS80JfFUNPjmOjVtE'
+var token='5689364691:AAEvSh05PS8HDNGdM_O6fUjdCfStBH7eBVI'
 
 
 
@@ -18,8 +18,8 @@ var chat_id= message.get("chat")
 var id=chat_id.get("id")
 
 if text=="/start"{
-
-var data=dict(chat_id=id,text="hi")
+var txt="عرربي اننن"
+var data=dict(chat_id=id,text=txt)
 var method ="sendMessage"
 PostDataBot(method,data)}
 
