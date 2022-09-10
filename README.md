@@ -1,6 +1,6 @@
 # kagsa-Bot-Telegram
 
-### community links community links library
+### community links library
 
 [Telegram](https://t.me/kagsaBotTelegram)
 
